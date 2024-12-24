@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <body>
-    <h1>ForgeMaker - Code Source</h1>
+    <h1>GENERATE MAKEFILE </h1>
     <p><strong>ForgeMaker</strong> est un générateur de Makefile écrit en C. Il scanne les répertoires du dossier courant et génère un Makefile basé sur les fichiers source (<code>src</code>) et d’en-tête (<code>inc</code>) détectés.</p>
     <h2>Structure du Dépôt</h2>
     <ul>
@@ -14,9 +14,9 @@
         <li>Clonez ce dépôt :</li>
         <pre><code>git clone https://github.com/votre-utilisateur/ForgeMaker-Source.git</code></pre>
         <li>Accédez au répertoire cloné :</li>
-        <pre><code>cd ForgeMaker-Source</code></pre>
+        <pre><code>cd GenerateMakefile</code></pre>
         <li>Compilez le projet ForgeMaker :</li>
-        <pre><code>make</code></pre>
+        <pre><code>make NAME=ForgeMaker</code></pre>
         <li>L’exécutable <code>ForgeMaker</code> sera créé dans le répertoire courant.</li>
     </ol>
     <h2>Comment Contribuer</h2>
