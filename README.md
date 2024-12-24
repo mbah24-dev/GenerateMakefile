@@ -12,7 +12,7 @@
     <h2>Comment Compiler</h2>
     <ol>
         <li>Clonez ce dépôt :</li>
-        <pre><code>git clone https://github.com/votre-utilisateur/ForgeMaker-Source.git</code></pre>
+        <pre><code>git clone https://github.com/mbah24-dev/GenerateMakefile.git</code></pre>
         <li>Accédez au répertoire cloné :</li>
         <pre><code>cd GenerateMakefile</code></pre>
         <li>Compilez le projet ForgeMaker :</li>
