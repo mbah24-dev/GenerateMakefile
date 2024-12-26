@@ -6,7 +6,7 @@
 /*   By: mbah <mbah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:06:48 by mbah              #+#    #+#             */
-/*   Updated: 2024/12/26 21:47:32 by mbah             ###   ########.fr       */
+/*   Updated: 2024/12/26 22:02:20 by mbah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ int	main(int argc, char **argv)
 	char		inc_buffer[4096] = {0};
 	size_t		offset;
 	
-	(void) argc;
+	if (argc < 2)
+	{
+		printf("Vous devez passer le nom du projet comme premier parametre\n");
+		return (0);
+	}
 	makefile = makefile_constants(argv[1]);
 	offset = 0;
 	fd = open("./Makefile", O_WRONLY | O_CREAT | O_TRUNC, 0644);
