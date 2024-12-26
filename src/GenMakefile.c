@@ -24,13 +24,13 @@ int	main(void)
 
 	makefile = makefile_constants();
 	offset = 0;
-	fd = open("./makefile", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	fd = open("./Makefile", O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (an_error(fd, "./src", "./inc"))
 		return (1);
 	scan_files("src", src_buffer, sizeof(src_buffer), &offset, ".c");
 	offset = 0;
 	scan_files("inc", inc_buffer, sizeof(inc_buffer), &offset, ".h");
-	write_makefile_with_signature("./makefile");
+	write_makefile_with_signature("./Makefile");
 	safe_write(fd, makefile.make_header, ft_strlen(makefile.make_header));
 	write_makefile(fd, inc_buffer, 'i');
 	write_makefile(fd, parse_src_files_buffer(src_buffer), 's');
