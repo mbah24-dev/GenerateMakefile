@@ -6,7 +6,7 @@
 /*   By: mbah <mbah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:44:39 by mbah              #+#    #+#             */
-/*   Updated: 2024/12/23 21:07:22 by mbah             ###   ########.fr       */
+/*   Updated: 2024/12/26 21:45:14 by mbah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ struct	s_makefile
 
 typedef struct s_makefile	t_makefile;
 
-t_makefile	makefile_constants(void);
+t_makefile  makefile_constants(char *exec_name);
 int			an_error(int fd, const char *src, const char *inc);
 char		*parse_src_files_buffer(const char *src_buffer);
 void	scan_files(const char *dir_path, char *src_buffer, 

@@ -6,14 +6,14 @@
 /*   By: mbah <mbah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:06:48 by mbah              #+#    #+#             */
-/*   Updated: 2024/12/23 21:20:42 by mbah             ###   ########.fr       */
+/*   Updated: 2024/12/26 21:47:32 by mbah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/GenMakefile.h"
 #include "../inc/utils.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_makefile	makefile;
 	int			fd;
@@ -21,8 +21,8 @@ int	main(void)
 	char		inc_buffer[4096] = {0};
 	size_t		offset;
 	
-
-	makefile = makefile_constants();
+	(void) argc;
+	makefile = makefile_constants(argv[1]);
 	offset = 0;
 	fd = open("./Makefile", O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (an_error(fd, "./src", "./inc"))
@@ -30,7 +30,6 @@ int	main(void)
 	scan_files("src", src_buffer, sizeof(src_buffer), &offset, ".c");
 	offset = 0;
 	scan_files("inc", inc_buffer, sizeof(inc_buffer), &offset, ".h");
-	write_makefile_with_signature("./Makefile");
 	safe_write(fd, makefile.make_header, ft_strlen(makefile.make_header));
 	write_makefile(fd, inc_buffer, 'i');
 	write_makefile(fd, parse_src_files_buffer(src_buffer), 's');

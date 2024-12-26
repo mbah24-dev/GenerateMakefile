@@ -1,4 +1,4 @@
-NAME      ?= exec
+NAME      ?= gen_makefile
 CC         = cc
 DIR        = src
 INC        = inc
